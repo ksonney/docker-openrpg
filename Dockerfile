@@ -13,5 +13,6 @@ RUN apt-get install -y wget unzip
 RUN mkdir /openrpg
 RUN cd /openrpg && wget http://www.assembla.com/spaces/openrpg/documents/download/OpenRPG1.8.0.zip && unzip OpenRPG1.8.0.zip
 RUN chmod +x /openrpg/start_client.py
+COPY orpg_windows_patched.py /openrpg/orpg/orpg_windows.py
 WORKDIR /openrpg 
 ENTRYPOINT ["/openrpg/start_client.py"]
